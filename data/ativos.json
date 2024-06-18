@@ -1,0 +1,413 @@
+[
+    {
+        "ativo": "TAEE11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:TAEE11",
+        "descricao": "Transmissora Alianca de Enrga Eltrca S/A Unit",
+        "setor": "Energia",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "EGIE3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:EGIE3",
+        "descricao": "Engie Brasil Energia SA",
+        "setor": "Energia",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "CXSE3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:CXSE3",
+        "descricao": "Caixa Seguridade Participacoes SA",
+        "setor": "Seguro",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "BBSE3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:BBSE3",
+        "descricao": "BB Seguridade Participacoes SA",
+        "setor": "Seguro",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "ITSA4",
+        "moeda": "REAL",
+        "simbolo": "BVMF:ITSA4",
+        "descricao": "Itausa SA Preference Shares",
+        "setor": "Banco",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "ABCB4",
+        "moeda": "REAL",
+        "simbolo": "BVMF:ABCB4",
+        "descricao": "Banco ABC Brasil SA",
+        "setor": "Banco",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "SAPR11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:SAPR11",
+        "descricao": "Companhia de Saneamento Parana SANEPAR Unit",
+        "setor": "Saneamento",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "CAML3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:CAML3",
+        "descricao": "Camil Alimentos SA",
+        "setor": "Agro",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "FLRY3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:FLRY3",
+        "descricao": "Fleury SA",
+        "setor": "Saúde",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "TUPY3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:TUPY3",
+        "descricao": "Tupy SA",
+        "setor": "Indústrial",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "WEGE3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:WEGE3",
+        "descricao": "Weg SA",
+        "setor": "Indústrial",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "AMER3",
+        "moeda": "REAL",
+        "simbolo": "BVMF:AMER3",
+        "descricao": "Americanas SA - Em Recuperacao Judicial",
+        "setor": "Varejo",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "GOAU4",
+        "moeda": "REAL",
+        "simbolo": "BVMF:GOAU4",
+        "descricao": "Metalurgica Gerdau SA Preference Shares",
+        "setor": "Siderúrgico",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "CPLE6",
+        "moeda": "REAL",
+        "simbolo": "BVMF:CPLE6",
+        "descricao": "Cia Paranaense De Energia Copel Pref Shs",
+        "setor": "Energia",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "HGRU11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:HGRU11",
+        "descricao": "CSHG Renda Urbana-FI Imobiliario-FII - Un",
+        "setor": "Tijolo",
+        "subtipo": "Escritórios",
+        "classe": "FII"
+    },
+    {
+        "ativo": "LVBI11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:LVBI11",
+        "descricao": "Fundo de Investimento Imobiliario - VBI Logistico",
+        "setor": "Tijolo",
+        "subtipo": "Varejo",
+        "classe": "FII"
+    },
+    {
+        "ativo": "XPML11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:XPML11",
+        "descricao": "XP Malls Fundo de Investimento Imobiliario",
+        "setor": "Tijolo",
+        "subtipo": "Logística",
+        "classe": "FII"
+    },
+    {
+        "ativo": "JSRE11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:JSRE11",
+        "descricao": "JS Real Estate Multigestao FII",
+        "setor": "Tijolo",
+        "subtipo": "Agências bancárias",
+        "classe": "FII"
+    },
+    {
+        "ativo": "AFHI11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:AFHI11",
+        "descricao": "AF Invest Cri FII Recebiveis Imobiliarios",
+        "setor": "Tijolo",
+        "subtipo": "Hospitais",
+        "classe": "FII"
+    },
+    {
+        "ativo": "CVBI11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:CVBI11",
+        "descricao": "FI Imobiliario - VBI CRI",
+        "setor": "Tijolo",
+        "subtipo": "Diversos",
+        "classe": "FII"
+    },
+    {
+        "ativo": "BRCO11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:BRCO11",
+        "descricao": "Bresco Logistica Fundo de Investimento Imobiliaro ETF",
+        "setor": "Tijolo",
+        "subtipo": "Shoppings Centers",
+        "classe": "FII"
+    },
+    {
+        "ativo": "RBRF11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:RBRF11",
+        "descricao": "FI Imobiliario RBR Alpha Fundo de Fundos",
+        "setor": "Papel",
+        "subtipo": "Financeiro",
+        "classe": "FII"
+    },
+    {
+        "ativo": "WPLZ11",
+        "moeda": "REAL",
+        "simbolo": "BVMF:WPLZ11",
+        "descricao": "Shopping West Plaza FI Imobiliario - Un",
+        "setor": "Papel",
+        "subtipo": "Financeiro",
+        "classe": "FII"
+    },
+    {
+        "ativo": "JPM",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:JPM",
+        "descricao": "JPMorgan Chase & Co",
+        "setor": "Banco",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "KHC",
+        "moeda": "DOLAR",
+        "simbolo": "NASDAQ:KHC",
+        "descricao": "Kraft Heinz Co",
+        "setor": "Indústrial",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "USB",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:USB",
+        "descricao": "US Bancorp",
+        "setor": "Banco",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "PFE",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:PFE",
+        "descricao": "Pfizer Inc",
+        "setor": "Saúde",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "WMB",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:WMB",
+        "descricao": "Williams Companies Inc",
+        "setor": "Energia",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "KO",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:KO",
+        "descricao": "Coca-Cola Co",
+        "setor": "Indústrial",
+        "classe": "ACAO"
+    },
+    {
+        "ativo": "O",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:O",
+        "descricao": "Realty Income Corp",
+        "setor": "Tijolo",
+        "subtipo": "Urbano",
+        "classe": "FII"
+    },
+    {
+        "ativo": "PLD",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:PLD",
+        "descricao": "Prologis Inc",
+        "setor": "Tijolo",
+        "subtipo": "Logística",
+        "classe": "FII"
+    },
+    {
+        "ativo": "EXR",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:EXR",
+        "descricao": "Extra Space Storage Inc",
+        "setor": "Tijolo",
+        "subtipo": "Logística",
+        "classe": "FII"
+    },
+    {
+        "ativo": "ADC",
+        "moeda": "DOLAR",
+        "simbolo": "NYSE:ADC",
+        "descricao": "Agree Realty Corporation",
+        "setor": "Tijolo",
+        "subtipo": "Imóveis",
+        "classe": "FII"
+    },
+    {
+        "ativo": "SGOV",
+        "moeda": "DOLAR",
+        "simbolo": "SGOV",
+        "descricao": "iShares 0-3 Month Treasury Bond ETF",
+        "setor": "Tesouro",
+        "subtipo": "Renda Fixa",
+        "classe": "TESOURO"
+    },
+    {
+        "ativo": "BTC",
+        "moeda": "DOLAR",
+        "simbolo": "BTC",
+        "descricao": "Bitcoin",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "ETH",
+        "moeda": "DOLAR",
+        "simbolo": "ETH",
+        "descricao": "Etherium",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "USDT",
+        "moeda": "DOLAR",
+        "simbolo": "USDT",
+        "descricao": "USD Tether",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "ARB",
+        "moeda": "USDT",
+        "simbolo": "ARB",
+        "descricao": "Arbitrium",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "SOL",
+        "moeda": "USDT",
+        "simbolo": "SOL",
+        "descricao": "Solana",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "DYDX",
+        "moeda": "USDT",
+        "simbolo": "DYDX",
+        "descricao": "Dydx",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "STX",
+        "moeda": "USDT",
+        "simbolo": "STX",
+        "descricao": "Stacks",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "LDO",
+        "moeda": "USDT",
+        "simbolo": "LDO",
+        "descricao": "Lido DAO",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "LINK",
+        "moeda": "USDT",
+        "simbolo": "LINK",
+        "descricao": "ChainLink",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "OP",
+        "moeda": "USDT",
+        "simbolo": "OP",
+        "descricao": "Optimism",
+        "setor": "Crypto",
+        "classe": "CRYPTO"
+    },
+    {
+        "ativo": "Bnp Paribas RF",
+        "moeda": "REAL",
+        "simbolo": "0P0000TQ9D ",
+        "descricao": "Bnp Paribas Rf Fundo De Investimento",
+        "setor": "Renda Fixa",
+        "subtipo": "",
+        "classe": "FUNDO"
+    },
+    {
+        "ativo": "Bnp Paribas DI",
+        "moeda": "REAL",
+        "simbolo": "0P0000V1WB ",
+        "descricao": "BNP Paribas RF FIRF (XP)",
+        "setor": "Renda Fixa",
+        "subtipo": "",
+        "classe": "FUNDO"
+    },
+    {
+        "ativo": "Trend Inb Rico",
+        "moeda": "REAL",
+        "simbolo": "",
+        "descricao": "BNP Paribas RF FIRF (XP)",
+        "setor": "Renda Fixa",
+        "subtipo": "Pré-fixado",
+        "classe": "FUNDO"
+    },
+    {
+        "ativo": "Trend Inb Rico",
+        "moeda": "REAL",
+        "simbolo": "",
+        "descricao": "XP Referenciado FIRF REF DI CP",
+        "setor": "Renda Fixa",
+        "subtipo": "Pré-fixado",
+        "classe": "FUNDO"
+    },
+    {
+        "ativo": "BMG CDB DI 120",
+        "moeda": "REAL",
+        "simbolo": "",
+        "descricao": "BMG CDB DI 120",
+        "setor": "Renda Fixa",
+        "subtipo": "Pós-fixado",
+        "classe": "CDB"
+    }
+]

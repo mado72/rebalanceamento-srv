@@ -1,0 +1,3 @@
+db
+use rebaçanceamento
+db.conta.insertMany([{"_id":1,"conta":"Itaú","saldo":693.01,"moeda":"REAL"},{"_id":2,"conta":"NuBank","saldo":"382,82","moeda":"REAL"},{"_id":3,"conta":"Rico","saldo":0,"moeda":"REAL"},{"_id":4,"conta":"Rico Inv.","saldo":0,"moeda":"REAL"},{"_id":5,"conta":"Itaú Finfor","saldo":0,"moeda":"REAL"},{"_id":6,"conta":"Nomad","saldo":0,"moeda":"DOLAR"},{"_id":7,"conta":"Bmg Vasco","saldo":0,"moeda":"REAL"},{"_id":8,"conta":"BTG","saldo":0,"moeda":"REAL"},{"_id":9,"conta":"XP","saldo":0,"moeda":"REAL"},{"_id":10,"conta":"XP Inv.","saldo":6.41,"moeda":"REAL"},{"_id":11,"conta":"Nu Bank Finfor","saldo":0,"moeda":"REAL"},{"_id":12,"conta":"Binance R$","saldo":0,"moeda":"REAL"},{"_id":13,"conta":"Binance USDT","saldo":0,"moeda":"USDT"}]);

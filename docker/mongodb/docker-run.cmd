@@ -1,0 +1,2 @@
+docker run --name mongodb -v E:\ISO\Docker\Mongo:/data/db -p 27017:27017 -e MONGODB_INITDB_ROOT_USERNAME=user -e MONGODB_INITDB_ROOT_PASSWORD=pass -d mongodb/mongodb-community-server:6.0-ubi8
+@REM docker run --name mongodb -v E:\ISO\Docker\Mongo:/data/db -p 27017:27017 -e MONGODB_INITDB_ROOT_USERNAME=user -e MONGODB_INITDB_ROOT_PASSWORD=pass -d mongodb/mongodb-community-server:6.0-ubi8

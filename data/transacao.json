@@ -1,0 +1,619 @@
+[{
+	"_id": {
+		"$oid": "664cd886ee24b1fa965e8179"
+	},
+	"descricao": "Carão Itaú",
+	"valor": 500,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-06",
+	"categoria": "Prazeres",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cd8c5ee24b1fa965e817c"
+	},
+	"descricao": "Cartão Nu",
+	"valor": 5000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-22",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cd8dbee24b1fa965e817f"
+	},
+	"descricao": "Cartão Rico",
+	"valor": 1000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-10",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-12-10"
+},
+{
+	"_id": {
+		"$oid": "664cd8f2ee24b1fa965e8182"
+	},
+	"descricao": "Gas",
+	"valor": 70,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-05",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-12-05"
+},
+{
+	"_id": {
+		"$oid": "664cd909ee24b1fa965e8185"
+	},
+	"descricao": "Plano Saúde",
+	"valor": 874.4,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-15",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-12-15"
+},
+{
+	"_id": {
+		"$oid": "664cd933ee24b1fa965e8188"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-05",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-01-05",
+	"__v": 0,
+	"categoria": "Custos fixos"
+},
+{
+	"_id": {
+		"$oid": "664cdffaee24b1fa965e81ad"
+	},
+	"descricao": "Globality 2",
+	"valor": 14000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-01-20",
+	"origem": "664cd783ee24b1fa965e816d",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-12-20"
+},
+{
+	"_id": {
+		"$oid": "664ce14cee24b1fa965e81e1"
+	},
+	"descricao": "Alessandra",
+	"valor": 2118,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-10",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664ce17bee24b1fa965e81e4"
+	},
+	"descricao": "Bernardo 1",
+	"valor": 1212,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-10",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664ce3ecee24b1fa965e8218"
+	},
+	"descricao": "Bernardo 2",
+	"valor": 616,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-20",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cf071ee24b1fa965e8276"
+	},
+	"descricao": "Impostos",
+	"valor": 3000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-01-20",
+	"categoria": "Imposto",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cf0a3ee24b1fa965e827a"
+	},
+	"descricao": "Contador",
+	"valor": 1849.2,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-02-20",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cf0eaee24b1fa965e827d"
+	},
+	"descricao": "Emp. Nubank",
+	"valor": 1864.75,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-02-22",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-04-22"
+},
+{
+	"_id": {
+		"$oid": "664cf1f1ee24b1fa965e8282"
+	},
+	"descricao": "Emp. Itaú",
+	"valor": 1332,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-04-10",
+	"categoria": "Empréstimo",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-04-10",
+	"__v": 0,
+	"dataFinal": "2024-05-10"
+},
+{
+	"_id": {
+		"$oid": "664cf263ee24b1fa965e8287"
+	},
+	"descricao": "Emp. Itaú 2",
+	"valor": 1340,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-04-30",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-05-30"
+},
+{
+	"_id": {
+		"$oid": "664cf2d0ee24b1fa965e828d"
+	},
+	"descricao": "Emp. Nubank 3000",
+	"valor": 987.77,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-05-10",
+	"categoria": "Empréstimo",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-20",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cf53bee24b1fa965e8298"
+	},
+	"descricao": "Emp. Nubank 3000 dep",
+	"valor": 3000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-05-10",
+	"categoria": "Empréstimo",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-10",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cf81aee24b1fa965e82a1"
+	},
+	"descricao": "Emp. Nubank 3000",
+	"valor": 1095.73,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-06-10",
+	"categoria": "Empréstimo",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-07-10"
+},
+{
+	"_id": {
+		"$oid": "664cf863ee24b1fa965e82a6"
+	},
+	"descricao": "Enzo 1",
+	"valor": 200,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-05-10",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-10",
+	"__v": 0,
+	"dataFinal": "2024-06-10"
+},
+{
+	"_id": {
+		"$oid": "664cf872ee24b1fa965e82a9"
+	},
+	"descricao": "Enzo 2",
+	"valor": 100,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-05-20",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664cf8c0ee24b1fa965e82ad"
+	},
+	"descricao": "Gael",
+	"valor": 130,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-04-20",
+	"categoria": "Prazeres",
+	"liquidacao": "CONTA",
+	"__v": 0,
+	"dataFinal": "2024-06-20"
+},
+{
+	"_id": {
+		"$oid": "664d00f3ee24b1fa965e82c6"
+	},
+	"descricao": "Fundação",
+	"valor": 350,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-06-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d01cdee24b1fa965e82cf"
+	},
+	"descricao": "Enzo 1",
+	"valor": 200,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-06-10",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d01efee24b1fa965e82d3"
+	},
+	"descricao": "Emp. Itaú",
+	"valor": 1332,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-05-10",
+	"categoria": "Empréstimo",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-10",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0224ee24b1fa965e82d9"
+	},
+	"descricao": "Globality 2",
+	"valor": 14840.67,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-05-20",
+	"origem": "664cdffaee24b1fa965e81ad",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-20",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0c88ee24b1fa965e8333"
+	},
+	"descricao": "Globality 1",
+	"valor": 6000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-01-06",
+	"origem": "664d0c58ee24b1fa965e832c",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-01-06",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0caaee24b1fa965e8336"
+	},
+	"descricao": "Globality 1",
+	"valor": 6000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-02-06",
+	"origem": "664d0c88ee24b1fa965e8333",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-02-06",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0cd0ee24b1fa965e833d"
+	},
+	"descricao": "Globality 1",
+	"valor": 6000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-03-06",
+	"origem": "664d0c88ee24b1fa965e8333",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-03-06",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0cd3ee24b1fa965e8340"
+	},
+	"descricao": "Globality 1",
+	"valor": 6000,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-04-06",
+	"origem": "664d0c88ee24b1fa965e8333",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-04-06",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0cffee24b1fa965e8343"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-05-06",
+	"origem": "664d0c88ee24b1fa965e8333",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-06",
+	"__v": 0,
+	"dataFinal": "2024-12-06"
+},
+{
+	"_id": {
+		"$oid": "664d0d13ee24b1fa965e8348"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-06-06",
+	"origem": "664d0c88ee24b1fa965e8333",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d44ee24b1fa965e834c"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-07-06",
+	"origem": "664d0d13ee24b1fa965e8348",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d46ee24b1fa965e834f"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-08-06",
+	"origem": "664d0d44ee24b1fa965e834c",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d48ee24b1fa965e8352"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-09-06",
+	"origem": "664d0d46ee24b1fa965e834f",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d4aee24b1fa965e8355"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-10-06",
+	"origem": "664d0d48ee24b1fa965e8352",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d4cee24b1fa965e8358"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-11-06",
+	"origem": "664d0d4aee24b1fa965e8355",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d4fee24b1fa965e835b"
+	},
+	"descricao": "Globality 1",
+	"valor": 6360.29,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "CREDITO",
+	"dataInicial": "2024-12-06",
+	"origem": "664d0d4cee24b1fa965e8358",
+	"categoria": "Salário",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d70ee24b1fa965e8360"
+	},
+	"descricao": "Fundação",
+	"valor": 350,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-07-05",
+	"origem": "664d00f3ee24b1fa965e82c6",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d77ee24b1fa965e8363"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-05-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-05-05",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d7dee24b1fa965e8366"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-04-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-04-05",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d80ee24b1fa965e8369"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-03-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-03-05",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d0d84ee24b1fa965e836c"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-02-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"dataLiquidacao": "2024-02-05",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d4986ee24b1fa965e83a6"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-03-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "664d4a13ee24b1fa965e83a8"
+	},
+	"descricao": "Fundação",
+	"valor": 325,
+	"periodicidade": "MENSAL",
+	"tipoTransacao": "DEBITO",
+	"dataInicial": "2024-03-05",
+	"origem": "664cd933ee24b1fa965e8188",
+	"categoria": "Custos fixos",
+	"liquidacao": "CONTA",
+	"__v": 0
+}]

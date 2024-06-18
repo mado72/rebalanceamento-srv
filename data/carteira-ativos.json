@@ -1,0 +1,247 @@
+[
+    {
+      "carteiraId": 2,
+      "ativoId": 1,
+      "objetivo": 0.05
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 2,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 3,
+      "objetivo": 0.05
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 4,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 5,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 6,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 7,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 8,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 9,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 10,
+      "objetivo": 0.05
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 13,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 2,
+      "ativoId": 14,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 3,
+      "ativoId": 11,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 3,
+      "ativoId": 12,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 15,
+      "objetivo": 0.1625
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 16,
+      "objetivo": 0.1625
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 17,
+      "objetivo": 0.1625
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 18,
+      "objetivo": 0.1625
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 19,
+      "objetivo": 0.175
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 20,
+      "objetivo": 0.175
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 21,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 22,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 4,
+      "ativoId": 23,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 5,
+      "ativoId": 24,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 5,
+      "ativoId": 25,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 5,
+      "ativoId": 26,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 5,
+      "ativoId": 27,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 5,
+      "ativoId": 28,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 5,
+      "ativoId": 29,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 6,
+      "ativoId": 30,
+      "objetivo": 0.08
+    },
+    {
+      "carteiraId": 6,
+      "ativoId": 31,
+      "objetivo": 0.08
+    },
+    {
+      "carteiraId": 6,
+      "ativoId": 32,
+      "objetivo": 0.08
+    },
+    {
+      "carteiraId": 6,
+      "ativoId": 33,
+      "objetivo": 0.08
+    },
+    {
+      "carteiraId": 7,
+      "ativoId": 34,
+      "objetivo": 0.08
+    },
+    {
+      "carteiraId": 8,
+      "ativoId": 35,
+      "objetivo": 0.6
+    },
+    {
+      "carteiraId": 8,
+      "ativoId": 36,
+      "objetivo": 0.4
+    },
+    {
+      "carteiraId": 8,
+      "ativoId": 37,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 38,
+      "objetivo": 0.1
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 39,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 40,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 41,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 42,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 43,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 9,
+      "ativoId": 44,
+      "objetivo": 0.15
+    },
+    {
+      "carteiraId": 10,
+      "ativoId": 49,
+      "objetivo": 0
+    },
+    {
+      "carteiraId": 11,
+      "ativoId": 45,
+      "objetivo": 0.25
+    },
+    {
+      "carteiraId": 11,
+      "ativoId": 46,
+      "objetivo": 0.25
+    },
+    {
+      "carteiraId": 11,
+      "ativoId": 47,
+      "objetivo": 0.25
+    },
+    {
+      "carteiraId": 11,
+      "ativoId": 48,
+      "objetivo": 0.25
+    }
+  ]

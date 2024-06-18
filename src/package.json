@@ -1,0 +1,23 @@
+{
+  "name": "api-rebalanceamento",
+  "version": "1.0.0",
+  "description": "API para manter portifólio de ativos, carteiras, despesas e contas no mongodb",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js",
+    "debug": "node --nolazy index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "connect": "^3.2.0",
+    "js-yaml": "^3.3.0",
+    "luxon": "^3.4.4",
+    "oas3-tools": "^2.2.3",
+    "yahoo-finance2": "^2.11.2"
+  }
+}

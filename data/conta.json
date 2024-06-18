@@ -1,0 +1,62 @@
+[
+    {
+        "conta": "Itaú",
+        "saldo": 693.01,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "NuBank",
+        "saldo": 382.82,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "Nu Bank Finfor",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "Rico",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "Rico Inv.",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "Itaú Finfor",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "Nomad",
+        "saldo": 0,
+        "moeda": "DOLAR"
+    },
+    {
+        "conta": "Bmg Vasco",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "BTG",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "XP",
+        "saldo": 0,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "XP Inv.",
+        "saldo": 6.41,
+        "moeda": "REAL"
+    },
+    {
+        "conta": "Binance",
+        "saldo": 0,
+        "moeda": "DOLAR"
+    }
+]

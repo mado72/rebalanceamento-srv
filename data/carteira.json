@@ -1,0 +1,68 @@
+[
+  {
+    "carteira": "Reserva",
+    "classe": "MOEDA",
+    "objetivo": 0.16,
+    "moeda": "REAL"
+  },
+  {
+    "carteira": "Plena - Ações",
+    "classe": "ACOES",
+    "objetivo": 0.35,
+    "moeda": "REAL"
+  },
+  {
+    "carteira": "Preferidas",
+    "classe": "ACOES",
+    "objetivo": 0,
+    "moeda": "REAL"
+  },
+  {
+    "carteira": "Plena - FII",
+    "classe": "FII",
+    "objetivo": 0.17,
+    "moeda": "REAL"
+  },
+  {
+    "carteira": "Plena - Stock",
+    "classe": "INTERNACIONAL",
+    "objetivo": 0.06,
+    "moeda": "DOLAR"
+  },
+  {
+    "carteira": "Plena - REIT",
+    "classe": "INTERNACIONAL",
+    "objetivo": 0.04,
+    "moeda": "DOLAR"
+  },
+  {
+    "carteira": "Plena - Bond",
+    "classe": "INTERNACIONAL",
+    "objetivo": 0.02,
+    "moeda": "DOLAR"
+  },
+  {
+    "carteira": "Crypto",
+    "classe": "CRYPTO",
+    "objetivo": 0.04,
+    "moeda": "DOLAR"
+  },
+  {
+    "carteira": "AltCoins",
+    "classe": "ALTCOINS",
+    "objetivo": 0.01,
+    "moeda": "USDT"
+  },
+  {
+    "carteira": "CDB",
+    "classe": "RF",
+    "objetivo": 0.06,
+    "moeda": "REAL"
+  },
+  {
+    "carteira": "Fundo",
+    "classe": "RF",
+    "objetivo": 0.09,
+    "moeda": "REAL"
+  }
+]

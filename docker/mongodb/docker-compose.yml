@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  myapplication:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    environment:
+      - CONN_STR=mongodb://user:pass@mongodb2
+    command: '/bin/bash -c "sleep 5; mongosh $$CONN_STR --eval \"show dbs;\""'
+    depends_on:
+      - mongodb2
+  
+  mongodb2:
+    container_name: 'mongodb2'
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-db:/data/db/
+      # - type: bind
+      #   source: E:\\ISO\\Docker\\Mongo
+      #   target: /data/db
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=user
+      - MONGODB_INITDB_ROOT_PASSWORD=pass
+    
+volumes:
+  mongo-db:
+    driver: local

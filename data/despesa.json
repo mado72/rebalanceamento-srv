@@ -1,0 +1,116 @@
+[
+    {
+      "descricao": "Cartão Itaú",
+      "dataVencimento": "2024-04-06",
+      "valor":1856.12,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Cartão NuBank",
+      "dataVencimento": "2024-04-20",
+      "valor":2537.27,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Cartão Rico",
+      "dataVencimento": "2024-04-10",
+      "valor":4166.34,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Gás",
+      "dataVencimento": "2024-01-05",
+      "valor":97,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Plano de Saúde",
+      "dataVencimento": "2024-02-15",
+      "valor":874.4,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Fundação",
+      "dataVencimento": "2024-03-05",
+      "valor":325,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Alessandra",
+      "dataVencimento": "2024-04-10",
+      "valor":2118,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Bernardo",
+      "dataVencimento": "2024-04-10",
+      "valor":1212,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Bernardo",
+      "dataVencimento": "2024-04-20",
+      "valor":616,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Contador",
+      "dataVencimento": "2024-04-20",
+      "valor":1867.83,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Emp. Nu",
+      "dataVencimento": "2024-04-22",
+      "valor":1864.75,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Emp. Itaú",
+      "dataVencimento": "2024-04-10",
+      "valor":0,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Emp. Itaú 2",
+      "dataVencimento": "2024-04-30",
+      "valor":1340,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Impostos",
+      "dataVencimento": "2024-04-20",
+      "valor":2500,
+      "periodicidade": "MENSAL",
+      "dataPagamento": "2024-04-20",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Papai",
+      "dataVencimento": "2024-04-20",
+      "valor":500,
+      "dataPagamento": "2024-04-20",
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    },
+    {
+      "descricao": "Gael",
+      "dataVencimento": "2024-02-20",
+      "valor":864.14,
+      "periodicidade": "MENSAL",
+      "categoria": "Custo Fixo"
+    }
+  ]
