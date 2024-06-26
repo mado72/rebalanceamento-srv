@@ -1157,12 +1157,31 @@ paths:
         - read:domain
         
   /cotacao/batch/cotacoes:
+    get:
+      x-swagger-router-controller: Cotacao
+      operationId: atualizarCotacoesBatchGET
+      tags:
+      - Cotacao
+      summary: Recupera o status de processamento de atualizações das cotações
+      description: Retorna um objeto com informações dos processamentos do dia
+      responses:
+        "200":
+          description: Obteve cotação
+          content:
+            application/json:
+              schema:
+                type: object
+                x-content-type: application/json
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
     put:
       x-swagger-router-controller: Cotacao
       operationId: atualizarCotacoesBatchPUT
       tags:
       - Cotacao
-      summary: Obtém cotações do Yahoo Finance
+      summary: Atualiza cotações a partir de consulta no Yahoo Finance
       description: Recupera a cotação atual de um ou mais símbolos
       responses:
         "200":

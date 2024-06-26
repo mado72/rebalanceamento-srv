@@ -23,6 +23,16 @@ module.exports.cotacaoYahooSummaryGET = function cotacaoYahooSummaryGET(req, res
         });
 }
 
+module.exports.atualizarCotacoesBatchGET = function atualizarCotacoesBatchGET(req, res) {
+    Cotacao.atualizarCotacoesBatchGET()
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.handleError(res, response);
+        });
+}
+
 module.exports.atualizarCotacoesBatchPUT = function atualizarCotacoesBatchPUT(req, res) {
     Cotacao.atualizarCotacoesBatchPUT()
         .then(function (response) {
