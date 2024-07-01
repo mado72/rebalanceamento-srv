@@ -1273,15 +1273,14 @@ components:
     Classe:
       type: string
       enum:
-      - MOEDA
-      - ACAO
+      - Moeda
+      - Acao
       - FII
-      - FUNDO
+      - PosFixado
       - CDB
       - RF
-      - REFERENCIA
-      - CRIPTO
-      - ALTCOINS
+      - Referencia
+      - Cripto
     
     Transacao:
       type: object
@@ -1404,7 +1403,7 @@ components:
       required:
       - sigla
       - nome
-      - tipoAtivo
+      - tipo
       - moeda
       - setor
       type: object
@@ -1435,7 +1434,7 @@ components:
           minLength: 3
           type: string
           example: Tecnologia
-        tipoAtivo:
+        tipo:
           $ref: '#/components/schemas/Classe'
         referencia:
           type: object
@@ -1455,7 +1454,7 @@ components:
         simbolo: NYSE:GOOGL
         setor: Tecnologia
         ativo: GOOGLE
-        tipoAtivo: ACAO
+        tipo: Acao
         moeda: BRL
         id: 100
         descricao: Google na NYSE

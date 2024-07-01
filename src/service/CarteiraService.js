@@ -10,13 +10,13 @@ const CarteiraAtivo = mongoose.model('carteiraAtivo');
  * Lista os ativos disponíveis
  * Lista os ativos cadastrados
  *
- * tipoAtivo Tipo de Ativo  (optional)
+ * tipo Tipo de Ativo  (optional)
  * returns List
  **/
-exports.ativoGET = function (tipoAtivo, termo) {
+exports.ativoGET = function (tipo, termo) {
   return new Promise(async function (resolve, reject) {
     var filter = {};
-    !!tipoAtivo && (filter.tipoAtivo = tipoAtivo);
+    !!tipo && (filter.tipo = tipo);
     !!termo && (filter.$or = [
       {nome : {$regex: new RegExp(termo, 'i')}}, 
       {sigla : {$regex: new RegExp(termo, 'i')}}, 

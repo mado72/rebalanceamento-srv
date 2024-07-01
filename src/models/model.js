@@ -25,7 +25,7 @@ const TipoPeriodicidade = Object.freeze({
 })
 
 const TipoLiquidacao = Object.freeze({
-    CONTA: "CONTA",
+    Conta: "Conta",
     CARTAO: "CARTAO",
     OUTROS: "OUTROS"
 })
@@ -50,30 +50,31 @@ const TipoMoedaSigla = Object.freeze({
 })
 
 const TipoClasse = Object.freeze({
-    MOEDA : "MOEDA",
-    ACAO : "ACAO",
+    Moeda : "Moeda",
+    Acao : "Acao",
     FII : "FII",
-    FUNDO: "FUNDO",
+    PosFixado: "PosFixado",
     CDB : "CDB",
     RF : "RF",
-    REFERENCIA : "REFERENCIA",
-    CRIPTO : "CRIPTO",
-    ALTCOINS : "ALTCOINS"
+    Referencia : "Referencia",
+    Cripto : "Cripto",
 })
 
 const TipoConsolidado = Object.freeze({
-    CONTA : "CONTA",
-    ACAO : "ACAO",
+    Conta : "Conta",
+    Acao : "Acao",
     FII : "FII",
     RF : "RF",
     CDB : "CDB",
-    FUNDO : "FUNDO",
-    TRADE : "TRADE",
-    RESERVA : "RESERVA",
-    CRIPTO : "CRIPTO",
-    SWING : "SWING",
-    PROVENTO : "PROVENTO",
-    RETIRADA : "RETIRADA"
+    PosFixado : "PosFixado",
+    Trade : "Trade",
+    Reserva : "Reserva",
+    Cripto : "Cripto",
+    SwingTrade : "SwingTrade",
+    Provento : "Provento",
+    JCP: "JCP",
+    Aluguel: "Aluguel",
+    Retirada : "Retirada"
 })
 
 const TipoStatusColeta = Object.freeze({
@@ -143,7 +144,7 @@ var Ativo = new Schema({
     siglaYahoo: {type: String, required: false, index: true, unique: true}, // Simbolo do ativo no Yahoo
     descricao: {type: String}, // Descrição do ativo
     setor: {type: String, required: true}, // Setor do ativo
-    tipoAtivo: {type: String, required: true, enum: Object.values(TipoClasse)}, // Classe do ativo
+    tipo: {type: String, required: true, enum: Object.values(TipoClasse)}, // Classe do ativo
     cotacao: {type: Number, format: 'double', required: false}, // Cotação do ativo
     referencia: {type: ReferenciaCarteira, required: false}, // Referência da carteira
 })
