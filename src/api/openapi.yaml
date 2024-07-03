@@ -1364,7 +1364,7 @@ components:
 
     Carteira:
       required:
-      - classe
+      - tipo
       - moeda
       - nome
       - objetivo
@@ -1389,10 +1389,14 @@ components:
         objetivo:
           type: number
           description: Percentual da alocação desta carteira no portifólio
-          format: double
+          minimum: 0
+          maximum: 1
           example: 0.01
+          format: double
         classe:
           $ref: '#/components/schemas/Classe'
+        ativos:
+          $ref: '#/components/schemas/CarteiraAtivos'
       example:
         objetivo: 0.01
         classe: ACAO
@@ -1475,6 +1479,8 @@ components:
           objetivo:
             type: number
             format: double
+            minimum: 0
+            maximum: 1
             description: Percentual do objetivo do ativo na carteira
             example: 0.5
           quantidade:
