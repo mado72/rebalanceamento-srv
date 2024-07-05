@@ -78,7 +78,7 @@ module.exports.atualizarCotacoesBatchPUT = function () {
     return new Promise(async (resolve, reject) => {
         try {
             const uuid = crypto.randomUUID();
-            var ativos = await Ativo.find({siglaYahoo: {$exists: true}, tipoAtivo: {$in:['MOEDA', 'ACAO', 'FII', 'FUNDO', 'CDB', 'RF', 'CRIPTO', 'ALTCOINS']}});
+            var ativos = await Ativo.find({siglaYahoo: {$exists: true}, tipo: {$in:['Moeda', 'Acao', 'FII', 'PosFixado', 'CDB', 'RF', 'Cripto', 'AltCoins']}});
             var siglas = ativos.map((ativo) => ativo.siglaYahoo);
 
             const hoje = format(new Date(), 'yyyy-MM-dd');
