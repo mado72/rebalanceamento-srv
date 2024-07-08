@@ -1276,7 +1276,7 @@ components:
       - Moeda
       - Acao
       - FII
-      - PosFixado
+      - PosFixada
       - CDB
       - RF
       - Referencia
@@ -1364,7 +1364,7 @@ components:
 
     Carteira:
       required:
-      - tipo
+      - classe
       - moeda
       - nome
       - objetivo
