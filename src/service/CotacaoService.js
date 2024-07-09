@@ -109,7 +109,7 @@ module.exports.atualizarCotacoesBatchPUT = function () {
                 })
 
                 const queueResolve = (async (response, data) => {
-                    await atualizarCotacao(response, data.hoje, new Date());
+                    await atualizarCotacao(response, data.hoje, format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"));
                     data.statusColeta.status = 'CONCLUIDA';
                     data.statusColeta.save();
 
