@@ -20,6 +20,7 @@ exports.Queue = class Queue {
       }
       const item = this.queue.shift();
       if (!item) {
+        console.debug('Queue is empty');
         resolve();
         return false;
       }
