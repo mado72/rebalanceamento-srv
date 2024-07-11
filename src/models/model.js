@@ -56,6 +56,7 @@ const TipoClasse = Object.freeze({
     PosFixada: "PosFixada",
     CDB : "CDB",
     RF : "RF",
+    ETF : "ETF",
     Referencia : "Referencia",
     Cripto : "Cripto",
 })
@@ -64,6 +65,7 @@ const TipoConsolidado = Object.freeze({
     Conta : "Conta",
     Acao : "Acao",
     FII : "FII",
+    ETF : "ETF",
     RF : "RF",
     CDB : "CDB",
     PosFixada : "PosFixada",

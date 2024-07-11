@@ -1279,6 +1279,7 @@ components:
       - PosFixada
       - CDB
       - RF
+      - ETF
       - Referencia
       - Cripto
     
