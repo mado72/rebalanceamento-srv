@@ -246,20 +246,27 @@ module.exports.cotacaoGET = function (data, simbolos) {
     }
 
     return new Promise(async (resolve, reject) => {
-        const filter = {
-            "$match": {
-                simbolo: {
-                    "$in": simbolos
+        try {
+            // const ultimasCotacoes = await Cotacao.aggregate([{"$match": {"simbolo": {"$in": simbolos}}},{"$group":{"_id": "$simbolo", "maxdata": {$max: "$data"}}}]);
+            const aggFilter = {
+                "$match": {
+                    simbolo: {
+                        "$in": simbolos
+                    }
                 }
             }
-        }
-
-        if (!!data) {
-            filter.$match.data = data;
-        }
-
-        try {
-            const ultimasCotacoes = await Cotacao.aggregate([{"$match": {"simbolo": {"$in": simbolos}}},{"$group":{"_id": "$simbolo", "maxdata": {$min: "$data"}}}]);
+    
+            if (!!data) {
+                aggFilter["$match"].data = {
+                    $lte: data
+                }
+            }
+    
+            const agg = [
+                aggFilter,
+                {"$group":{"_id": "$simbolo", "maxdata": {$max: "$data"}}}
+            ];
+            const ultimasCotacoes = await Cotacao.aggregate(agg);
             if (!ultimasCotacoes.length) {
                 resolve([]);
                 return;
