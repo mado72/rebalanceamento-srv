@@ -118,7 +118,7 @@ exports.ativoPUT = function (body) {
         resolve(respondWithCode(404, `Não encontrado ${id}`));
         return;
       }
-      resolve(result);
+      resolve(result.toObject());
     } catch (error) {
       error.code = 422;
       reject(error);
@@ -304,7 +304,7 @@ exports.carteiraPUT = function (body) {
         resolve(respondWithCode(404, `Não encontrado ${body._id}`));
         return;
       }
-      resolve(carteira);
+      resolve(carteira.toObject());
     } catch (error) {
       reject(error);
     }

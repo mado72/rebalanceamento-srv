@@ -115,7 +115,8 @@ exports.contaPUT = function(body) {
         resolve(respondWithCode(404, `Não encontrado ${result}`));
         return;
       }
-      resolve(result);
+      const dados = result.toObject();
+      resolve(dados);
     } catch (error) {
       error.code = 422;
       reject(error);

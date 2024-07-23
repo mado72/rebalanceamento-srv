@@ -130,7 +130,7 @@ exports.transacaoPUT = function (body) {
         resolve(respondWithCode(404, `Transação não encontrada`));
         return;
       }
-      resolve();
+      resolve(transacao.toObject());
     } catch (error) {
       error.code = 422;
       reject(error);
