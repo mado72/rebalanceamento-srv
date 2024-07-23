@@ -1124,6 +1124,38 @@ paths:
         - write:domain
         - read:domain
         
+  /cotacao/summary/{simbolo}:
+    get:
+      x-swagger-router-controller: Cotacao
+      operationId: cotacaoSummaryGET
+      tags:
+      - Cotacao
+      summary: Obtém cotações do Yahoo Finance chamando API web
+      description: Recupera a cotação atual de um ou mais símbolos
+      parameters: 
+      - name: simbolo
+        in: path
+        description: Símbolo da(s) cotação(ões) a ser(em) pesquisada(s
+        required: true
+        schema:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+      responses:
+        "200":
+          description: Obteve cotação
+          content:
+            application/json:
+              schema:
+                type: object
+                x-content-type: application/json
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+        
   /cotacao/yahoo/{simbolo}:
     get:
       x-swagger-router-controller: Cotacao

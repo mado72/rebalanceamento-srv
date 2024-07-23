@@ -6,7 +6,7 @@ const StatusColeta = mongoose.model('status-coleta');
 
 var Model = require('../models/model');
 
-// const yahooFinance = require('yahoo-finance2').default;
+const yahooFinance = require('yahoo-finance2').default;
 const { exec } = require('child_process');
 const { format, differenceInDays } = require('date-fns');
 
@@ -14,19 +14,23 @@ const { Queue } = require('../utils/queue.js')
 
 module.exports.cotacaoYahooGET = function (simbolo) {
     return new Promise((resolve, reject) => {
-        // yahooFinance.quoteSummary(simbolo, {}).then((quote)=>{
-        //     resolve(quote);
-        // })
-        // .catch((err) =>{
-        //     reject(err);
-        // });
-        exec(`npx yahoo-finance2 quote ${simbolo}`, (err, stdout, stderr) => {
-            if (err) {
-                reject(err);
-            } else {
-                stdout = stdout.split('\n').filter((_, idx) => idx >= 3).join('\n');
-                resolve(stdout);
-            }
+        yahooFinance.quoteSummary(simbolo, {}).then((quote)=>{
+            resolve(quote);
+        })
+        .catch((err) =>{
+            reject(err);
+        });
+        // execYahooCli(simbolo, reject, resolve);
+    });
+}
+
+module.exports.cotacaoSummaryGET = function (simbolo) {
+    return new Promise((resolve, reject) => {
+        yahooFinance.quoteSummary(simbolo, {}).then((quote)=>{
+            resolve(quote);
+        })
+        .catch((err) =>{
+            reject(err);
         });
     });
 }
@@ -35,11 +39,11 @@ module.exports.cotacaoYahooSummaryGET = function (simbolo) {
     return new Promise((resolve, reject) => {
         this.cotacaoYahooGET(simbolo)
             .then((response) => {
-                if (!!response && response.indexOf('undefined') == 0) {
+                if (!!response && response.indexOf && response.indexOf('undefined') == 0) {
                     reject(`Não foi possível obter a cotação ${simbolo}`);
                     return;
                 }
-                const quote = JSON.parse(response);
+                const quote = (response.indexOf && JSON.parse(response)) || (response.price);
                 const result = {
                     simbolo: quote.symbol,
                     moeda: quote.currency,
@@ -114,7 +118,7 @@ module.exports.atualizarCotacoesBatchPUT = function () {
                     data.statusColeta.save();
 
                     totalizador.processados++;
-                    totalizador.status = 'processando';
+                    totalizador.status = totalizador.processados + totalizador.erros < totalizador.total ? 'processando' : 'concluido';
                     mapCotacoesBatch.set(uuid, totalizador);
                 });
 
@@ -179,6 +183,17 @@ module.exports.atualizarCotacaoBatchPUT = function (sigla) {
             resolve(sigla);
         } catch (error) {
             reject(error);
+        }
+    });
+}
+
+function execYahooCli(simbolo, reject, resolve) {
+    exec(`npx yahoo-finance2 quote ${simbolo}`, (err, stdout, stderr) => {
+        if (err) {
+            reject(err);
+        } else {
+            stdout = stdout.split('\n').filter((_, idx) => idx >= 3).join('\n');
+            resolve(stdout);
         }
     });
 }

@@ -198,21 +198,20 @@ var Cotacao = new Schema({
     simbolo: {type: String, required: true}, // Simbolo da cotação
     data: {type: String, required: true}, // Data da cotação
     dataColeta: {type: String, required: true}, // Data hora da coleta da cotação
-    maxima: {type: Number, format: 'double', required: true}, // Máxima da cotação
-    minima: {type: Number, format: 'double', required: true}, // Mínima da cotação
     // abertura: {type: Number, format: 'double', required: true}, // Abertura da cotação
     // fechamento: {type: Number, format: 'double', required: true}, // Fechamento da cotação
     // volume: {type: Number, format: 'double', required: true}, // Volume da cotação
     moeda: {type: String, required: true, enum: Object.values(TipoMoeda)}, // Moeda da cotação
     preco: {type: Number, format: 'double', required: true}, // Valor da cotação
+    manual: {type: Boolean, required: false, default: false}, //
     variacao: {type: Number, format: 'double', required: false}, // Variacao da cotação
     nome: {type: String, required: false}, // Nome da cotação
     curto: {type: String, required: false}, // Nome curto da cotação
-    minima: {type: Number, format: 'double', required: true}, // Minima da cotação
-    maxima: {type: Number, format: 'double', required: true}, // Maxima da cotação
+    minima: {type: Number, format: 'double', required: false}, // Minima da cotação
+    maxima: {type: Number, format: 'double', required: false}, // Maxima da cotação
     dividendo: {type: Number, format: 'double', required: false}, // Dividendo da cotação
     dividendoTaxa: {type: Number, format: 'double', required: false}, // Taxa do dividendo
-    horaMercado: {type: String, required: true} // Hora do mercado 
+    horaMercado: {type: String, required: false} // Hora do mercado 
 })
 
 Cotacao.index({simbolo: 1, data: 1}, {unique: true});

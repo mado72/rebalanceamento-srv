@@ -3,7 +3,7 @@
 var utils = require('../utils/writer.js');
 var Cotacao = require('../service/CotacaoService');
 
-module.exports.cotacaoYahooGET = function cocotacaoYahooGETntaGET(req, res, next, simbolo) {
+module.exports.cotacaoYahooGET = function cocotacaoYahooGET(req, res, next, simbolo) {
     Cotacao.cotacaoYahooGET(simbolo)
         .then(function (response) {
             utils.writeJson(res, response);
@@ -15,6 +15,16 @@ module.exports.cotacaoYahooGET = function cocotacaoYahooGETntaGET(req, res, next
 
 module.exports.cotacaoYahooSummaryGET = function cotacaoYahooSummaryGET(req, res, next, simbolo) {
     Cotacao.cotacaoYahooSummaryGET(simbolo)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.handleError(res, response);
+        });
+}
+
+module.exports.cotacaoSummaryGET = function cotacaoSummaryGET(req, res, next, simbolo) {
+    Cotacao.cotacaoSummaryGET(simbolo)
         .then(function (response) {
             utils.writeJson(res, response);
         })
