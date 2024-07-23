@@ -1123,7 +1123,8 @@ paths:
       - bearerAuth:
         - write:domain
         - read:domain
-        
+
+################################################################ COTACAO        
   /cotacao/summary/{simbolo}:
     get:
       x-swagger-router-controller: Cotacao
@@ -1234,8 +1235,8 @@ paths:
       operationId: atualizarCotacaoBatchPUT
       tags:
       - Cotacao
-      summary: Obtém cotações do Yahoo Finance
-      description: Recupera a cotação atual de um ou mais símbolos
+      summary: Obtém cotações do Yahoo Finance e atualiza as cotações na base de dados
+      description: Recupera a cotação atual de um ou mais símbolos e registra o resultado na base de dados
       parameters: 
       - name: simbolo
         in: path
@@ -1263,7 +1264,7 @@ paths:
       operationId: cotacaoGET
       tags:
       - Cotacao
-      summary: Obtém cotações do Yahoo Finance
+      summary: Obtém cotações armazenadas no banco de dados
       description: Recupera a cotação atual de um ou mais símbolos
       parameters: 
       - name: data
@@ -1273,7 +1274,7 @@ paths:
         schema:
           type: string
           pattern: '^\d{4}-\d{2}-\d{2}$'
-          example: '2024-03-20'
+          example: '2025-03-20'
       - name: simbolo
         in: query
         description: Símbolo das cotações a serem pesquisadas, separados por vírgula
@@ -1292,7 +1293,35 @@ paths:
       - bearerAuth:
         - write:domain
         - read:domain
-      
+    post:
+      x-swagger-router-controller: Cotacao
+      operationId: cotacaoPOST
+      tags:
+      - Cotacao
+      summary: Adiciona cotação ao banco de dados
+      description: Adiciona cotação ao banco de dados
+      requestBody:
+        description: Dados da conta
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Cotacao'
+      responses:
+        "201":
+          description: Cotação adicionada com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                x-content-type: application/json
+        "400":
+          description: O objeto de cotação não é válido
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+  
+
 components:
   schemas:
     Moeda:
@@ -1301,7 +1330,6 @@ components:
       - BRL
       - USD
       - USDT
-    
     Classe:
       type: string
       enum:
@@ -1314,7 +1342,14 @@ components:
       - ETF
       - Referencia
       - Cripto
-    
+    TipoConta:
+      type: string
+      enum:
+      - CORRENTE
+      - INVESTIMENTO
+      - POUPANCA
+      - CARTAO
+      - OUTROS
     Transacao:
       type: object
       required:
@@ -1382,19 +1417,12 @@ components:
           example: Custo Fixo
           nullable: true
         liquidacao:
-          type: string
-          example: CONTA
-          enum:
-            - CONTA
-            - CARTAO
-            - OUTROS
+          $ref: '#/components/schemas/TipoConta'
         contaLiquidacao:
           type: string
           nullable: true
           minLength: 8
           description: Referência à conta de liquidação
-
-
     Carteira:
       required:
       - classe
@@ -1413,12 +1441,7 @@ components:
           description: Nome da carteira
           example: Ações
         moeda:
-          type: string
-          example: BRL
-          enum:
-          - BRL
-          - USD
-          - USDT
+          $ref: '#/components/schemas/Moeda'
         objetivo:
           type: number
           description: Percentual da alocação desta carteira no portifólio
@@ -1461,12 +1484,7 @@ components:
           type: string
           example: Google na NYSE
         moeda:
-          type: string
-          example: BRL
-          enum:
-          - BRL
-          - USD
-          - USDT
+          $ref: '#/components/schemas/Moeda'
         setor:
           minLength: 3
           type: string
@@ -1545,19 +1563,9 @@ components:
           format: double
           example: 150.23
         moeda:
-          type: string
-          enum:
-          - BRL
-          - USD
-          - USDT
+          $ref: '#/components/schemas/Moeda'
         tipo:
-          type: string
-          example: "CORRENTE"
-          enum:
-          - CORRENTE
-          - POUPANCA
-          - INVESTIMENTO
-          - CARTAO
+          $ref: '#/components/schemas/TipoConta'
       example:
         moeda: BRL
         conta: Itaú
@@ -1583,6 +1591,38 @@ components:
           type: number
           minimum: 190101
           maximum: 210012
+    Cotacao:
+      required:
+      - simbolo
+      - data
+      - preco
+      - moeda
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Id da Cotacão
+        simbolo:
+          type: string
+          description: Símbolo da Cotação
+        manual:
+          type: boolean
+          description: true quando for uma atualização manual
+        data:
+          type: string
+          format: date
+          example: 2020-01-01
+        dataColeta:
+          type: string
+          format: date
+          example: 2020-01-01
+        preco:
+          type: number
+          format: double
+          description: valor da cotação
+        moeda:
+          $ref: '#/components/schemas/Moeda'
+          
     Error:
       type: object
       

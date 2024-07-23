@@ -74,3 +74,33 @@ module.exports.cotacaoGET = function (req, res, next, data, simbolo) {
             utils.handleError(res, response);
         });
 }
+
+module.exports.cotacaoPOST = function (req, res, next, dados) {
+    if (! dados) {
+        utils.handleError(`Dados inválidos`);
+        return;
+    }
+    if (! dados.simbolo) {
+        utils.handleError(`Simbolo inválido`);
+        return;
+    }
+    dados.simbolo = dados.simbolo.trim();
+    if (! dados.manual) {
+        utils.handleError(`Apenas cotação manual é permitido atualizar`);
+        return;
+    }
+    if (! dados.data ) {
+        dados.data = new Date();
+    }
+    if (! dados.dataColeta ) {
+        dados.dataColeta = dados.data;
+    }
+    Cotacao.cotacaoPOST(dados)
+        .then(function (response) {
+            utils.writeJson(res, utils.respondWithCode(201, response));
+        })
+        .catch(function (error) {
+            console.error(`Erro ao salvar cotacao: '${dados.simbolo} ${error}'`);
+            utils.handleError(res, error);
+        });
+}

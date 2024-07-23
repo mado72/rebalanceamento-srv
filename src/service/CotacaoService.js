@@ -8,7 +8,7 @@ var Model = require('../models/model');
 
 const yahooFinance = require('yahoo-finance2').default;
 const { exec } = require('child_process');
-const { format, differenceInDays } = require('date-fns');
+const { format, differenceInDays, formatDate } = require('date-fns');
 
 const { Queue } = require('../utils/queue.js')
 
@@ -295,6 +295,24 @@ module.exports.cotacaoGET = function (data, simbolos) {
             const filter = fields.length > 1 ? {"$or": fields} : fields[0];
             const cotacoes = await Cotacao.find(filter);
             resolve(cotacoes);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+module.exports.cotacaoPOST = function (dados) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const filter = {
+                data: dados.data || format(new Date(), 'yyyy-MM-dd'),
+                simbolo: dados.simbolo
+            }
+            let cotacao = await Cotacao.findOneAndUpdate(filter, dados);
+            if (!cotacao) {
+                cotacao = await new Cotacao(dados).save();
+            }
+            resolve(cotacao.toObject());
         } catch (error) {
             reject(error);
         }
