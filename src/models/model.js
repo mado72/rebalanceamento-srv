@@ -84,6 +84,13 @@ const TipoStatusColeta = Object.freeze({
     CONCLUIDA : "CONCLUIDA"
 })
 
+const MetodoCotacao = Object.freeze({
+    manual: "manual",
+    yahoo: "yahoo",
+    tesouro: "tesouro",
+    referencia: "referencia"
+})
+
 var Transacao = new Schema({
     descricao: { type: String, required: true}, // Descrição da transação
     valor: {type: Number, required: true}, // Valor da transação
@@ -148,7 +155,8 @@ var Ativo = new Schema({
     setor: {type: String, required: true}, // Setor do ativo
     tipo: {type: String, required: true, enum: Object.values(TipoClasse)}, // Classe do ativo
     cotacao: {type: Number, format: 'double', required: false}, // Cotação do ativo
-    referencia: {type: ReferenciaCarteira, required: false}, // Referência da carteira
+    referencia: {type: ReferenciaCarteira, required: false}, // Referência da carteira,
+    metodo: {type: String, required: true, enum: Object.values(MetodoCotacao)}, // Método de atualização da cotação do ativo
 })
 
 var Conta = new Schema({

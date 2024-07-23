@@ -1350,6 +1350,13 @@ components:
       - POUPANCA
       - CARTAO
       - OUTROS
+    MetodoCotacao:
+      type: string
+      enum:
+      - manual
+      - yahoo
+      - tesouro
+      - referencia
     Transacao:
       type: object
       required:
@@ -1466,6 +1473,7 @@ components:
       - tipo
       - moeda
       - setor
+      - metodo
       type: object
       properties:
         _id:
@@ -1491,6 +1499,8 @@ components:
           example: Tecnologia
         tipo:
           $ref: '#/components/schemas/Classe'
+        metodo:
+          $ref: '#/components/schemas/MetodoCotacao'
         referencia:
           type: object
           required:

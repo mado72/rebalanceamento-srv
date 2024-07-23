@@ -12,7 +12,7 @@ const { format, differenceInDays, formatDate } = require('date-fns');
 
 const { Queue } = require('../utils/queue.js')
 
-module.exports.cotacaoYahooGET = function (simbolo) {
+function cotacaoYahooGET(simbolo) {
     return new Promise((resolve, reject) => {
         yahooFinance.quoteSummary(simbolo, {}).then((quote)=>{
             resolve(quote);
@@ -23,6 +23,7 @@ module.exports.cotacaoYahooGET = function (simbolo) {
         // execYahooCli(simbolo, reject, resolve);
     });
 }
+module.exports.cotacaoYahooGET = cotacaoYahooGET;
 
 module.exports.cotacaoSummaryGET = function (simbolo) {
     return new Promise((resolve, reject) => {
@@ -35,9 +36,9 @@ module.exports.cotacaoSummaryGET = function (simbolo) {
     });
 }
 
-module.exports.cotacaoYahooSummaryGET = function (simbolo) {
+function cotacaoYahooSummaryGET(simbolo) {
     return new Promise((resolve, reject) => {
-        this.cotacaoYahooGET(simbolo)
+        cotacaoYahooGET(simbolo)
             .then((response) => {
                 if (!!response && response.indexOf && response.indexOf('undefined') == 0) {
                     reject(`Não foi possível obter a cotação ${simbolo}`);
@@ -65,6 +66,8 @@ module.exports.cotacaoYahooSummaryGET = function (simbolo) {
     });
 }
 
+module.exports.cotacaoYahooSummaryGET = cotacaoYahooSummaryGET;
+
 const mapCotacoesBatch = new Map();
 
 module.exports.atualizarCotacoesBatchGET = function () {
@@ -82,70 +85,8 @@ module.exports.atualizarCotacoesBatchPUT = function () {
     return new Promise(async (resolve, reject) => {
         try {
             const uuid = crypto.randomUUID();
-            var ativos = await Ativo.find({siglaYahoo: {$exists: true}, tipo: {$in:['Moeda', 'Acao', 'FII', 'PosFixada', 'CDB', 'RF', 'Cripto', 'AltCoins']}});
-            var siglas = ativos.map((ativo) => ativo.siglaYahoo);
-
-            const hoje = format(new Date(), 'yyyy-MM-dd');
-
-            var siglasComCotacoesHoje = (await Cotacao.find({data: hoje}, {simbolo: 1})).map(item=>item.simbolo);
-
-            if (siglasComCotacoesHoje.length != siglas.length) {
-                siglas = siglas.filter(sigla=>!siglasComCotacoesHoje.includes(sigla))
-            }
-
-            const totalizador = {
-                data: new Date(),
-                total : siglas.length,
-                processados : 0,
-                erros: 0,
-                status: 'processando'
-            }
-
-            mapCotacoesBatch.set(uuid, totalizador)
-
-            siglas.forEach((sigla) => {
-                const now = format(new Date(), "yyyy-MM-dd'T'HH:mm:ss");
-                const statusColeta = new StatusColeta({
-                    simbolo: sigla,
-                    data: hoje,
-                    dataColeta: now,
-                    status: 'INICIADA'
-                })
-
-                const queueResolve = (async (response, data) => {
-                    await atualizarCotacao(response, data.hoje, format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"));
-                    data.statusColeta.status = 'CONCLUIDA';
-                    data.statusColeta.save();
-
-                    totalizador.processados++;
-                    totalizador.status = totalizador.processados + totalizador.erros < totalizador.total ? 'processando' : 'concluido';
-                    mapCotacoesBatch.set(uuid, totalizador);
-                });
-
-                const queueReject = (error, data) => {
-                    console.error(error);
-                    data.statusColeta.status = 'ERRO';
-                    data.statusColeta.mensagem = error.message ? error.message : error;
-                    data.statusColeta.save();
-                    
-                    totalizador.erros++;
-                    totalizador.status = 'processando';
-                    mapCotacoesBatch.set(uuid, totalizador);
-                };
-
-                Queue.enqueue(
-                    () => this.cotacaoYahooSummaryGET(sigla),
-                    queueResolve,
-                    queueReject,
-                    { simbolo: sigla, hoje, now, statusColeta }
-                ).then(() => {
-                    totalizador.status = 'sucesso';
-                }).catch((err) => {
-                    totalizador.status = 'erro'; 
-                    totalizador.error = err
-                });
-            });
-            resolve({siglas, uuid, data: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss")})
+            var ativos = await Ativo.find({metodo: "yahoo"});
+            await atualizarCotacoesYahoo(ativos, uuid).then((result) => resolve(result)).catch((err) => reject(err));
         } catch (error) {
             reject(error);
         }
@@ -181,6 +122,78 @@ module.exports.atualizarCotacaoBatchPUT = function (sigla) {
                     status.save();
                 });
             resolve(sigla);
+        } catch (error) {
+            reject(error);
+        }
+    });
+}
+
+async function atualizarCotacoesYahoo(ativos, uuid) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            var siglas = ativos.map((ativo) => ativo.siglaYahoo);
+        
+            const hoje = format(new Date(), 'yyyy-MM-dd');
+        
+            var siglasComCotacoesHoje = (await Cotacao.find({ data: hoje, simbolo: { "$in": siglas } })).map(item => item.simbolo);
+        
+            if (siglasComCotacoesHoje.length != siglas.length) {
+                siglas = siglas.filter(sigla => !siglasComCotacoesHoje.includes(sigla));
+            }
+        
+            const totalizador = {
+                data: new Date(),
+                total: siglas.length,
+                processados: 0,
+                erros: 0,
+                status: 'processando'
+            };
+        
+            mapCotacoesBatch.set(uuid, totalizador);
+        
+            siglas.forEach((sigla) => {
+                const now = format(new Date(), "yyyy-MM-dd'T'HH:mm:ss");
+                const statusColeta = new StatusColeta({
+                    simbolo: sigla,
+                    data: hoje,
+                    dataColeta: now,
+                    status: 'INICIADA'
+                });
+        
+                const queueResolve = (async (response, data) => {
+                    await atualizarCotacao(response, data.hoje, format(new Date(), "yyyy-MM-dd'T'HH:mm:ss"));
+                    data.statusColeta.status = 'CONCLUIDA';
+                    data.statusColeta.save();
+        
+                    totalizador.processados++;
+                    totalizador.status = totalizador.processados + totalizador.erros < totalizador.total ? 'processando' : 'concluido';
+                    mapCotacoesBatch.set(uuid, totalizador);
+                });
+        
+                const queueReject = (error, data) => {
+                    console.error(error);
+                    data.statusColeta.status = 'ERRO';
+                    data.statusColeta.mensagem = error.message ? error.message : error;
+                    data.statusColeta.save();
+        
+                    totalizador.erros++;
+                    totalizador.status = 'processando';
+                    mapCotacoesBatch.set(uuid, totalizador);
+                };
+        
+                Queue.enqueue(
+                    () => cotacaoYahooSummaryGET(sigla),
+                    queueResolve,
+                    queueReject,
+                    { simbolo: sigla, hoje, now, statusColeta }
+                ).then(() => {
+                    totalizador.status = 'sucesso';
+                }).catch((err) => {
+                    totalizador.status = 'erro';
+                    totalizador.error = err;
+                });
+            });
+            resolve({ siglas, uuid, data: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss") });
         } catch (error) {
             reject(error);
         }
