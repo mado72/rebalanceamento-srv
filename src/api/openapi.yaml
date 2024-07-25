@@ -1321,6 +1321,362 @@ paths:
         - write:domain
         - read:domain
   
+  /aporte:
+    get:
+      x-swagger-router-controller: Investimento
+      operationId: aporteGET
+      tags:
+      - Investimento
+      summary: Obtém aportes armazenados no banco de dados
+      description: Recupera os aportes realizados
+      parameters:
+      - name: carteiraId
+        in: query
+        description: Identificador da carteira
+        required: false
+        schema:
+          type: string
+      - name: data
+        in: query
+        description: Data do aporte. Quando não informado, assume a data corrente
+        required: false
+        schema:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+      responses:
+        "200":
+          description: Obteve aportes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Aporte'
+        "400":
+          description: Parâmetro inválido
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+    
+    post:
+      x-swagger-router-controller: Investimento
+      operationId: aportePOST
+      tags:
+      - Investimento
+      summary: Adiciona aporte ao banco de dados
+      description: Adiciona aporte ao banco de dados
+      requestBody:
+        description: Dados do aporte
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aporte'
+      responses:
+        "201":
+          description: Aporte adicionado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aporte'
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+        
+  /aporte/{id}:
+    parameters:
+    - name: id
+      in: path
+      description: Identificador do aporte
+      required: true
+      schema:
+        type: string
+    put:
+      x-swagger-router-controller: Investimento
+      operationId: aportePUT
+      tags:
+      - Investimento
+      summary: Atualiza aporte no banco de dados
+      description: Atualiza aporte no banco de dados
+      requestBody:
+        description: Dados do aporte
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Aporte'
+      responses:
+        "200":
+          description: Aporte atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Aporte'
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+
+    delete:
+      x-swagger-router-controller: Investimento
+      operationId: aporteDELETE
+      tags:
+      - Investimento
+      summary: Remove aporte do banco de dados
+      description: Remove aporte do banco de dados
+      responses:
+        "204":
+          description: Aporte removido com sucesso
+        "404":
+          description: Aporte não encontrado
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+
+  /provento:
+    get:
+      x-swagger-router-controller: Investimento
+      operationId: proventoGET
+      tags:
+      - Investimento
+      summary: Obtém proventos armazenados no banco de dados
+      description: Recupera os proventos emitidos
+      parameters:
+      - name: dataInicio
+        in: query
+        description: Data inicial do período dos proventos
+        required: false
+        schema:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+      - name: dataFinal
+        in: query
+        description: Data final do período dos proventos
+        required: false
+        schema:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+      - name: agregado
+        in: query
+        description: Agregado dos proventos. Por padrão, é 'false'
+        required: false
+        schema:
+          type: boolean
+          default: false
+      responses:
+        "200":
+          description: Obteve proventos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Provento'
+        "400":
+            description: Parâmetro inválido
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+    post:
+      x-swagger-router-controller: Investimento
+      operationId: proventoPOST
+      tags:
+      - Investimento
+      summary: Adiciona provento ao banco de dados
+      description: Adiciona provento ao banco de dados
+      requestBody:
+        description: Dados do provento
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Provento'
+      responses:
+        "201":
+          description: Provento adicionado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provento'
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+  
+  /provento/{id}:
+    parameters:
+    - name: id
+      in: path
+      description: Identificador do provento
+      required: true
+      schema:
+        type: string
+        properties:
+          id:
+            type: string
+      example: 'c57b6004-5605-448'
+    put:
+      x-swagger-router-controller: Investimento
+      operationId: proventoPUT
+      tags:
+      - Investimento
+      summary: Atualiza provento no banco de dados
+      description: Atualiza provento no banco de dados
+      requestBody:
+        description: Dados do provento
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Provento'
+      responses:
+        "200":
+          description: Provento atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Provento'
+        "404":
+          description: Provento não encontrado
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+    
+    delete:
+      x-swagger-router-controller: Investimento
+      operationId: proventoDELETE
+      tags:
+      - Investimento
+      summary: Remove provento do banco de dados
+      description: Remove provento do banco de dados
+      responses:
+        "204":
+          description: Provento removido com sucesso
+        "404":
+          description: Provento não encontrado
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+  
+  /retirada:
+    get:
+      x-swagger-router-controller: Investimento
+      operationId: retiradaGET
+      tags:
+      - Investimento
+      summary: Obtém retiradas armazenadas no banco de dados
+      description: Recupera as retiradas realizadas
+      parameters:
+      - name: dataInicio
+        in: query
+        description: Data inicial do período das retiradas
+        required: false
+        schema:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+      - name: dataFinal
+        in: query
+        description: Data final do período das retiradas
+        required: false
+        schema:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+      responses:
+        "200":
+          description: Obteve retiradas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Retirada'
+        "400":
+          description: Parâmetro inválido
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+    
+    post:
+      x-swagger-router-controller: Investimento
+      operationId: retiradaPOST
+      tags:
+      - Investimento
+      summary: Adiciona retirada ao banco de dados
+      description: Adiciona retirada ao banco de dados
+      requestBody:
+        description: Dados da retirada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Retirada'
+      responses:
+        "201":
+          description: Retirada adicionada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Retirada'
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+  
+  /retirada/{id}:
+    parameters:
+    - name: id
+      in: path
+      description: Identificador da retirada
+      required: true
+      schema:
+        type: string
+        example: 'c57b6004-5605-448'
+    put:
+      x-swagger-router-controller: Investimento
+      operationId: retiradaPUT
+      tags:
+      - Investimento
+      summary: Atualiza retirada no banco de dados
+      description: Atualiza retirada no banco de dados
+      requestBody:
+        description: Dados da retirada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Retirada'
+      responses:
+        "200":
+          description: Retirada atualizada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Retirada'
+        "404":
+          description: Retirada não encontrada
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+    
+    delete:
+      x-swagger-router-controller: Investimento
+      operationId: retiradaDELETE
+      tags:
+      - Investimento
+      summary: Remove retirada do banco de dados
+      description: Remove retirada do banco de dados
+      responses:
+        "204":
+          description: Retirada removida com sucesso
+        "404":
+          description: Retirada não encontrada
+      security:
+      - bearerAuth:
+        - write:domain
+        - read:domain
+      
 
 components:
   schemas:
@@ -1632,7 +1988,96 @@ components:
           description: valor da cotação
         moeda:
           $ref: '#/components/schemas/Moeda'
-          
+
+    Aporte:
+      required:
+      - idCarteira
+      - idAtivo
+      - data
+      - quantidade
+      - valorUnitario
+      - total
+      type: object
+      properties:
+        _id:
+          type: string
+        idCarteira:
+          type: string
+        idAtivo:
+          type: string
+        data:
+          type: string
+          format: date
+        quantidade:
+          type: number
+          format: double
+        valorUnitario:
+          type: number
+          format: double
+        total:
+          type: number
+          format: double
+      example:
+        idCarteira: c57b6004-5605-448
+        idAtivo: c57b6004-5605-448
+        data: 2020-01-01
+        quantidade: 10
+        valorUnitario: 100.00
+        total: 1000.00
+
+    TipoProvento:
+      type: string
+      enum:
+        - Dividendo
+        - JCP
+        - Aluguel
+        - Taxa
+        - Bonus
+        - Outros
+    
+    Provento:
+      required:
+      - idAtivo
+      - idConta
+      - data
+      - tipo
+      - total
+      type: object
+      properties:
+        _id:
+          type: string
+        idAtivo:
+          type: string
+        idConta:
+          type: string
+        data:
+          type: string
+          format: date
+        tipo:
+          $ref: '#/components/schemas/TipoProvento'
+        total:
+          type: number
+          format: double
+      example:
+        idAtivo: c57b6004-5605-448
+        idConta: c57b6004-5605-448
+        data: 2020-01-01
+        tipo: Dividendo
+        total: 100.00
+
+    Retirada:
+      required:
+      - data
+      - valor
+      type: object
+      properties:
+        data:
+          type: string
+          format: date
+        valor:
+          type: number
+          format: double
+            
     Error:
       type: object
       

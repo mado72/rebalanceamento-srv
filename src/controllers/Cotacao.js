@@ -77,16 +77,16 @@ module.exports.cotacaoGET = function (req, res, next, data, simbolo) {
 
 module.exports.cotacaoPOST = function (req, res, next, dados) {
     if (! dados) {
-        utils.handleError(`Dados inválidos`);
+        utils.handleError(res, `Dados inválidos`);
         return;
     }
     if (! dados.simbolo) {
-        utils.handleError(`Simbolo inválido`);
+        utils.handleError(res, `Simbolo inválido`);
         return;
     }
     dados.simbolo = dados.simbolo.trim();
     if (! dados.manual) {
-        utils.handleError(`Apenas cotação manual é permitido atualizar`);
+        utils.handleError(res, `Apenas cotação manual é permitido atualizar`);
         return;
     }
     if (! dados.data ) {

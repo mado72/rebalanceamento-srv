@@ -91,6 +91,15 @@ const MetodoCotacao = Object.freeze({
     referencia: "referencia"
 })
 
+const TipoProvento = Object.freeze({
+    Dividendo: "Dividendo",
+    JCP: "JCP",
+    Aluguel: "Aluguel",
+    Taxa: "Taxa",
+    Bonus: "Bonus",
+    Outros: "Outros"
+})
+
 var Transacao = new Schema({
     descricao: { type: String, required: true}, // Descrição da transação
     valor: {type: Number, required: true}, // Valor da transação
@@ -232,7 +241,43 @@ var StatusColeta = new Schema({
     mensagem: {type: String, required: false}, // Mensagem da coleta
 })
 
+var Aporte = new Schema({
+    idCarteira: {type: mongoose.Schema.Types.ObjectId, ref: 'carteira', required: true}, // ID da Conta
+    idAtivo: {type: mongoose.Schema.Types.ObjectId, ref: 'ativo', required: true}, // ID do Ativo
+    data: {type: String, required: true}, // Data do Aporte
+    quantidade: {type: Number, required: true}, // Quantidade do Aporte
+    valorUnitario: {type: Number, required: true}, // Valor Unitário do Aporte
+    total: {type: Number, required: true}, // Total do Aporte
+})
+
+Aporte.index({idCarteira: 1, idAtivo: 1}, {unique: true})
+
+var Provento = new Schema({
+    idAtivo: {type: mongoose.Schema.Types.ObjectId, ref: 'ativo', required: true}, // ID do Ativo
+    idConta: {type: mongoose.Schema.Types.ObjectId, ref: 'conta', required: true}, // ID do Ativo
+    data: {type: String, required: true}, // Data do Provento
+    tipo: {type: String, required: true, enum: Object.values(TipoProvento)}, // Tipo do Provento
+    total: {type: Number, required: true}, // Total do Provento
+})
+
+Provento.index({idAtivo: 1, idConta: 1, data: 1}, {unique: true})
+
+var Retirada = new Schema({
+    data: {type: String, required: true}, // Data da Retirada
+    valor: {type: Number, required: true}, // Retirada
+})
+
 module.exports = {
+    'tipo-moeda': TipoMoeda,
+    'tipo-moeda-sigla': TipoMoedaSigla,
+    'tipo-conta': TipoConta,
+    'tipo-classe': TipoClasse,
+    'tipo-periodicidade': TipoPeriodicidade,
+    'tipo-liquidacao': TipoLiquidacao,
+    'tipo-consolidado': TipoConsolidado,
+    'tipo-status-coleta': TipoStatusColeta,
+    'metodo-cotacao': MetodoCotacao,
+    'tipo-provento': TipoProvento,
     'ativo': mongoose.model('ativo', Ativo, 'ativo'),
     'transacao': mongoose.model('transacao', Transacao, 'transacao'),
     'carteira': mongoose.model('carteira', Carteira, 'carteira'),
@@ -241,10 +286,7 @@ module.exports = {
     'consolidado': mongoose.model('consolidado', Consolidado, 'consolidado'),
     'cotacao': mongoose.model('cotacao', Cotacao, 'cotacao'),
     'status-coleta': mongoose.model('status-coleta', StatusColeta, 'statusColeta'),
-    'tipo-moeda': TipoMoeda,
-    'tipo-moeda-sigla': TipoMoedaSigla,
-    'tipo-conta': TipoConta,
-    'tipo-classe': TipoClasse,
-    'tipo-periodicidade': TipoPeriodicidade,
-    'tipo-liquidacao': TipoLiquidacao,
+    'aporte': mongoose.model('aporte', Aporte, 'aporte'),
+    'provento': mongoose.model('provento', Provento, 'provento'),
+    'retirada': mongoose.model('retirada', Retirada, 'retirada'),
 }

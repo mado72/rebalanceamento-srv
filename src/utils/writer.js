@@ -7,6 +7,13 @@ exports.respondWithCode = function(code, payload) {
   return new ResponsePayload(code, payload);
 }
 
+exports.ResponseError = class ResponseError extends Error {
+  constructor(code, message) {
+    super(message);
+    this.code = code;
+  }
+}
+
 var writeJson = exports.writeJson = function(response, arg1, arg2) {
   var code;
   var payload;
